@@ -5,7 +5,6 @@ var valor = 0
 var numero = 0 # nao pode ter acento
 var lista = [] #nao declarou a variavel como var
 var nome # nao digitou a variavel
-var parar = false
 
 func _on_Button1_pressed():
 	#Coletando dados inseridos pelo usuário
@@ -23,9 +22,9 @@ func _on_Button2_pressed():
 func _on_Button3_pressed():
 #Mudando o nome do usuário de acordo com os dados da lista
 	#Se houver algum número ímpar o nome deve adicionar "baldo" ao final
-	for i in range(len(lista)):
-		if parar :
-			return
+	for i in range(len(lista)):#nao tinha declarado variavel i
+		if teste :
+			return #loop nao tinha fim
 		var cont=0 # nao declarou essa variavel
 		
 		if(lista[i]%2==1):
@@ -33,5 +32,5 @@ func _on_Button3_pressed():
 		if(cont!=0):
 			nome = nome+"baldo"
 			$Label2.text = ""+ String(nome) # escrita de maneira errada e sem tab
-			parar = true
+			teste = true
 			
