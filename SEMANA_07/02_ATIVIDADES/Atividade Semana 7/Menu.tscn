@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Main Menu.png" type="Texture" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=2]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="MainMenu" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -650.0
+margin_top = -334.0
+margin_right = -374.0
+margin_bottom = -266.0
+
+[node name="Inicio" type="Button" parent="MainMenu/VBoxContainer"]
+margin_right = 276.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../Sair")
+text = "Iniciar"
+
+[node name="Tema do Jogo" type="Button" parent="MainMenu/VBoxContainer"]
+margin_top = 24.0
+margin_right = 276.0
+margin_bottom = 44.0
+text = "Tema do Jogo"
+
+[node name="Sair" type="Button" parent="MainMenu/VBoxContainer"]
+margin_top = 48.0
+margin_right = 276.0
+margin_bottom = 68.0
+focus_neighbour_bottom = NodePath("../Inicio")
+text = "Sair"
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/Inicio" to="." method="_on_Inicio_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Tema do Jogo" to="." method="_on_Tema_do_Jogo_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Tema do Jogo" to="." method="_on_Opes_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Sair" to="." method="_on_Sair_pressed"]
