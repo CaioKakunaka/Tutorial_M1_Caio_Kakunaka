@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game Over.gd" type="Script" id=1]
+[ext_resource path="res://zombie.png" type="Texture" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 444, 141 )
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0.262745, 0.0823529, 1 )
+
+[node name="Sair" type="Button" parent="ColorRect"]
+margin_left = 23.0
+margin_top = 520.0
+margin_right = 156.0
+margin_bottom = 540.0
+text = "Sair"
+
+[node name="Reiniciar" type="Button" parent="ColorRect"]
+margin_left = 23.0
+margin_top = 488.0
+margin_right = 156.0
+margin_bottom = 508.0
+text = "Reiniciar"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+margin_left = 344.0
+margin_top = 106.0
+margin_right = 460.0
+margin_bottom = 146.0
+rect_scale = Vector2( 3, 3 )
+text = "Você foi Infectado"
+
+[node name="Zombie" type="Sprite" parent="."]
+position = Vector2( 588, 378 )
+scale = Vector2( 1.21282, 1.17647 )
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="ColorRect/Sair" to="." method="_on_Sair_pressed"]
+[connection signal="pressed" from="ColorRect/Reiniciar" to="." method="_on_Reiniciar_pressed"]
